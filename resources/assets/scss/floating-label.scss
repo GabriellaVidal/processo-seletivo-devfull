@@ -1,0 +1,196 @@
+.floating-label {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.floating-input{
+  font-size: 16px;
+  padding: 14px 22px;
+  display: block;
+  width: 100%;
+  height: 60px;
+  border: none;
+  background-color: $gray-lt-rits;
+  font-family: TTNorms-Regular !important;
+  &:focus ~ label, &:not(:placeholder-shown) ~ label {
+    top: 7px;
+    font-size: 10px;
+    color: $gray-rits;
+    font-family: TTNorms-Regular !important;
+    text-transform: uppercase;
+  }
+  &:focus{
+    &::placeholder {
+      font-size: 16px;
+      color: $gray-gray-rits
+    }
+
+  }
+  &::placeholder {
+    color: transparent;
+  }
+}
+
+.floating-input:focus, .floating-select:focus {
+  outline: none;
+  border: 2px solid $blue-rits;
+}
+
+label {
+  text-transform: uppercase;
+  color: $gray-rits;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 25px;
+  top: 40%;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  font-family: TTNorms-Regular !important;
+}
+
+.floating-input {
+}
+
+.floating-select {
+  font-size: 16px;
+  padding: 14px 22px;
+  display: block;
+  width: 100%;
+  height: 60px;
+  border: none;
+  background-color: $gray-lt-rits;
+  font-family: TTNorms-Regular !important;
+  & ~ label {
+    top: 7px;
+    font-size: 10px;
+    color: $gray-rits;
+    font-family: TTNorms-Regular !important;
+    text-transform: uppercase;
+  }
+  &:focus{
+    &::placeholder {
+      font-size: 16px;
+      color: $gray-gray-rits
+    }
+
+  }
+  &:not([value=""]):valid{
+    color: transparent;
+  }
+  & ~ option {
+    font-family: TTNorms-Regular !important;
+  }
+  option{
+    background-color: $gray-lt-rits;
+    font-family: TTNorms-Regular !important;
+    color: $gray-rits;
+  }
+}
+
+/* active state */
+
+.floating-input:focus ~ .bar {
+  &:before, &:after {
+    width: 50%;
+  }
+}
+
+.floating-select:focus ~ .bar {
+  &:before, &:after {
+    width: 50%;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  &:before, &:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+.floating-textarea {
+  min-height: 140px;
+  max-height: 260px;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+/* highlighter */
+
+.highlight {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 15%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+
+.floating-input:focus ~ .highlight, .floating-select:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* animation */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+/* Esconde o input */
+input[type='file'] {
+  display: none
+}
+
+/* Aparência que terá o seletor de arquivo */
+.floating-label-arquivo {
+  background-color: #3498db;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  padding: 6px 20px
+}
+
+/****  floating-Lable style end ****/

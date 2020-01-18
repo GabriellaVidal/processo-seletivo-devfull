@@ -1,0 +1,25 @@
+.site-header {
+  width: 100%;
+  font-family: TTNorms-Bold !important;
+  a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    &.btn-rits{
+      border-color: $green-rits;
+      background-color: $green-rits;
+      border-radius: 50px;
+      box-sizing: border-box;
+      padding: 10px 30px;
+      color: #2E2236 !important;
+      max-height: 40px;
+      &:hover{
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+      }
+    }
+
+  }
+}

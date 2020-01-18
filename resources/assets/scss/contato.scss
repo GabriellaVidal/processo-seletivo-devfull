@@ -1,0 +1,53 @@
+#contato{
+	margin: 80px;
+	.title-section{
+		text-align: center;
+		font-family: TTNorms-ExtraBold !important;
+    	color: $purple-rits !important;
+    	font-size: 24px;
+	}
+	.btn-rits{
+		border-color: $green-rits;
+	    background-color: $green-rits;
+	    border-radius: 50px;
+	    box-sizing: border-box;
+	  	padding: 10px 30px;
+	    color: #2E2236 !important;
+	    text-transform: uppercase;
+	    font-family: TTNorms-Bold !important;
+	    font-size: 14px;
+	    width: 100%;
+	    height: 60px;
+	}
+	.button-wrapper {
+	  position: relative;
+	  height: 50px
+	}
+
+	.button-wrapper span.label {
+	  position: relative;
+	  display: inline-block;
+	  width: 100%;
+	  background: transparent;
+	  cursor: pointer;
+	  color: $purple-rits;
+	  padding: 15px 0;
+	  font-size:16px;
+	  border: 2px solid $green-rits;
+	  border-radius: 50px;
+	  font-family: TTNorms-Bold !important;
+	  text-align: center;
+	}
+
+	#upload {
+	    display: inline-block;
+	    position: absolute;
+	    z-index: 1;
+	    width: 100%;
+	    height: 50px;
+	    top: 0;
+	    left: 0;
+	    opacity: 0;
+	    cursor: pointer;
+	}
+}

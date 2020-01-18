@@ -1,0 +1,26 @@
+// Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// FontAwesome
+@import "node_modules/font-awesome/scss/font-awesome";
+
+
+@import "_variables";
+@import "_fonts";
+@import "header";
+@import "footer";
+@import "banner";
+@import "contato";
+@import "floating-label";
+
+.btn-rits{
+	border-color: $green-rits;
+    background-color: $green-rits;
+    border-radius: 50px;
+    box-sizing: border-box;
+  	padding: 10px 30px;
+    color: #2E2236 !important;
+    text-transform: uppercase;
+    font-family: TTNorms-Bold !important;
+    font-size: 14px;
+}
