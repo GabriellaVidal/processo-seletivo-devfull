@@ -24,7 +24,7 @@
 	  height: 50px
 	}
 
-	.button-wrapper span.label {
+	.button-wrapper p.label {
 	  position: relative;
 	  display: inline-block;
 	  width: 100%;
@@ -49,5 +49,19 @@
 	    left: 0;
 	    opacity: 0;
 	    cursor: pointer;
+	}
+
+	.has-error{
+		.floating-input{
+			border: 2px solid $red-rits;
+		}
+		.floating-select{
+			border: 2px solid $red-rits;
+		}
+	}
+
+	.text-danger{
+		color: $red-rits;
+		font-family: TTNorms-Bold !important;
 	}
 }

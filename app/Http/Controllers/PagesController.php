@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
+use App\Models\Contact;
+use App\Models\File;
 use App\Mail\Contact as ContatoMail;
+use App\Http\Requests\Contact as ContactRequest;
 
 class PagesController extends Controller
 {
@@ -14,18 +18,33 @@ class PagesController extends Controller
     	return view('pages.index');
     }
 
-    public function sendContact()
+    public function sendContact(ContactRequest $request)
     {
-       
-        $mail = new ContatoMail(request()->all());
+        $file = new File();
+        $contato = new Contact();
+        $contato = $contato->fill($request->all());
+        $mail = new ContatoMail($request);
         $mail->subject('Contato');
         
-        Mail::to(['scholae@gmail.com'])->send($mail);
+        if ($request->curriculum) {
+            $imageName = time().'.'.$request->curriculum->getClientOriginalExtension();
+            $request->curriculum->move(public_path('/uploads'), $imageName);
+            $file->filename = $imageName;
+            $file->path = 'upload/'.$imageName;
+            // $url = Storage::url('file1.jpg');
+            $file->save();
+            // dump($file->contacts()->associate($contato));
+            if($file->contacts()->save($contato)){
 
-        if(Mail::failures())
-            return redirect()->to(route('index'))->with('flash_error', 'Tente Novamente');
-        else
-            return redirect()->to(route('index'))->with('flash_success', 'Contato enviado com sucesso');
+
+                Mail::to(['gabriellavidal2013@gmail.com'])->send($mail);
+
+                if(Mail::failures())
+                    return redirect()->to(route('index'))->with('flash_error', 'Tente Novamente');
+                else
+                    return redirect()->to(route('index'))->with('flash_success', 'Contato enviado com sucesso');
+            }
+        }
         
     }
 }

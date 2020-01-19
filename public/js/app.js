@@ -13307,6 +13307,15 @@ module.exports = __webpack_require__(9);
 
 __webpack_require__(4);
 $(document).ready(function () {
+    $("#upload").change(function () {
+        filename = this.files[0].name;
+        $(".button-wrapper").find('.label').find('span').empty();
+        $(".button-wrapper").find('.label').find('span').append(filename);
+    });
+    $("#phone").mask("(00) 0000-00009");
+    $("#salary").mask('#.##0,00', { reverse: true });
+});
+$(document).ready(function () {
     $("a[href='#top']").click(function () {
         $("html, body").animate({ scrollTop: 0 }, "slow");
         return false;

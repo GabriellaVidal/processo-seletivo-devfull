@@ -15138,7 +15138,7 @@ a.text-dark:focus {
   height: 50px;
 }
 
-#contato .button-wrapper span.label {
+#contato .button-wrapper p.label {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -15163,6 +15163,19 @@ a.text-dark:focus {
   left: 0;
   opacity: 0;
   cursor: pointer;
+}
+
+#contato .has-error .floating-input {
+  border: 2px solid #EA386D;
+}
+
+#contato .has-error .floating-select {
+  border: 2px solid #EA386D;
+}
+
+#contato .text-danger {
+  color: #EA386D;
+  font-family: TTNorms-Bold !important;
 }
 
 .floating-label {
@@ -15241,7 +15254,7 @@ label {
   position: absolute;
   pointer-events: none;
   left: 25px;
-  top: 40%;
+  top: 30%;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
