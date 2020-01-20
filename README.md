@@ -39,3 +39,14 @@ O projeto foi contruído em laravel 5.4.
 	Para realização do agendamento foi utilizado o metodo de schedule do console->kernel do laravel. Foi criada uma trait de disparo do email onde é contabilizado os novos contatos apartir da flag new_contact. No metodo de schedule foi chamado o send() da trait. Para execução automatica do agendamento se faz necessário a configuração de um crontab no servidor em que execute o agendamento a cada minuto. Só no método de agendamento do kernel que se foi configurado os horários de disparo(12h e 18h). Segue o comando para ser inserido no crontab:
 
 	- * * * * * php /home/gabriella/Documentos/rits/artisan schedule:run >> /dev/null 2>&1
+
+6. Start Projeto
+	Para inicializar o projeto localmente:
+	- clonar local
+	- php composer.phar install
+	- cp .env.example .env
+	- php artisan key:generate
+	- criar um banco e configurá-lo no .env
+	- php artisan migrate --seed
+	- colocar as configs smtp de email
+	- php artisan serve
