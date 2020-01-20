@@ -6,8 +6,9 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Models\Contact;
 
-class Contact extends Mailable
+class EmailAgendado extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -19,10 +20,9 @@ class Contact extends Mailable
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct()
     {
-        $this->data = $data;
-
+        $this->data['qtd'] = Contact::where('new_contact', 1)->get()->count() > 0 ? Contact::where('new_contact', 1)->get()->count() : 'Nenhum contato novo' ;
     }
 
     /**
@@ -33,6 +33,6 @@ class Contact extends Mailable
     public function build()
     {
         return $this->from(env('MAIL_FROM_ADDRESS', 'gabriellavidal2013@gmail.com'))
-            ->markdown('emails.email-contato');
+            ->markdown('emails.email-agendado');
     }
 }

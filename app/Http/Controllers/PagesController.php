@@ -34,7 +34,7 @@ class PagesController extends Controller
             if($file->contacts()->save($contato)){
 
 
-                Mail::to(['gabriellavidal2013@gmail.com'])->send($mail);
+                Mail::to(env('MAIL_FROM_ADDRESS', 'gabriellavidal2013@gmail.com'))->send($mail);
 
                 if(Mail::failures())
                     return redirect()->to(route('index'))->with('flash_error', 'Tente Novamente');

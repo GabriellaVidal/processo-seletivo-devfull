@@ -26,6 +26,7 @@ class CreateContactsTable extends Migration
             $table->string('github');
             $table->string('level_english');
             $table->string('salary');
+            $table->string('new_contact')->default(1);
             $table->timestamps();
         });
     }
