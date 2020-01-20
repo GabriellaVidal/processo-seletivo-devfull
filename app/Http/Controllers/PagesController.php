@@ -27,13 +27,10 @@ class PagesController extends Controller
         $mail->subject('Contato');
         
         if ($request->curriculum) {
-            $imageName = time().'.'.$request->curriculum->getClientOriginalExtension();
-            $request->curriculum->move(public_path('/uploads'), $imageName);
+            $imageName = $file->upload($request);
             $file->filename = $imageName;
-            $file->path = 'upload/'.$imageName;
-            // $url = Storage::url('file1.jpg');
+            $file->path = 'uploads/'.$imageName;
             $file->save();
-            // dump($file->contacts()->associate($contato));
             if($file->contacts()->save($contato)){
 
 

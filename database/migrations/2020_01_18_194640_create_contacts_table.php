@@ -21,7 +21,7 @@ class CreateContactsTable extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('email');
-            $table->string('motivation');
+            $table->string('motivation')->nullable();
             $table->string('linkedin');
             $table->string('github');
             $table->string('level_english');

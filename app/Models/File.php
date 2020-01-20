@@ -11,4 +11,11 @@ class File extends Model
     {
       return $this->hasMany(Contact::class);
     }
+
+    public function upload($request)
+    {
+    	$imageName = time().'.'.$request->curriculum->getClientOriginalExtension();
+        $request->curriculum->move(public_path('/uploads'), $imageName);
+        return $imageName;
+    }
 }

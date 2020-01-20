@@ -179,7 +179,8 @@ return [
 
         // PROJECT PROVIDERS
         Barryvdh\Debugbar\ServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class
+        Collective\Html\HtmlServiceProvider::class,
+        JeroenNoten\LaravelAdminLte\ServiceProvider::class,
     ],
 
     /*

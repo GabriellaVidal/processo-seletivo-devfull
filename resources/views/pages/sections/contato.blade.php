@@ -65,7 +65,7 @@
 						    	<i class="fa fa-paperclip" aria-hidden="true"></i> <span>Escolha o arquivo</span>
 						  	</p>
 						  
-						    <input type="file" name="curriculum" id="upload" class="upload-box" placeholder="Upload File" required>
+						    <input type="file" name="curriculum" id="upload" class="upload-box" placeholder="Upload File" required accept="application/msword, application/pdf">
 						  
 						</div>
 		  			</div>
