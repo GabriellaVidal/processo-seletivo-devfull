@@ -28,6 +28,7 @@ O projeto foi contruído em laravel 5.4.
 	- php artisan make:migration create_contacts_table (criação da tabela contacts)
 	- php artisan make:seeder ContactsTableSeeder (criação de seeder para insert conteudo teste)
 	- php artisan make:seeder UsersTableSeeder (criação de seeder para insert user padrão)
+	- php artisan migrate --seed
 
 	Login e senha administrativo:
 	Login: admin@rits.com
